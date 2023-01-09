@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: $basic-font;
+  font-size: 62.5%; // 1rem = 10px
+  line-height: 1.5;
+  color: $orange;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: $orange;
+  font-size: $content-font-size;
+}
+
+p {
+  word-break: keep-all;
+  font-size: $content-font-size;
+}
+
+strong {
+  display: block;
+}
+
+header,
+nav,
+main,
+article,
+section,
+footer {
+    display: block;
+}

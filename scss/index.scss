@@ -1,0 +1,1283 @@
+@import './style.scss';
+@import './common.scss';
+@import './mixin.scss';
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 20px;
+  // background-color: pink;
+
+  @include responsive(desktop-lg-screens) {
+    width: 1440px;
+  }
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.cnt-hg {
+  @include responsive(desktop-lg-screens) {
+    // height: 100vh;
+  }
+}
+
+// *** 헤더 translateX ***
+@keyframes move {
+  100% { transform: translateX(100%);}
+}
+
+// *** 헤더 오렌지 배경색 ***
+@keyframes rightmove {
+  100% { width: 44%;}
+}
+
+// *** 헤더 페이드인 ***
+@keyframes opa {
+  100% { opacity: 1; }
+}
+
+// *** 헤더 페이드업 ***
+@keyframes up {
+	100% { transform: translateY(0); opacity: 1; }
+}
+
+// *** 헤더 사진 페이드업 ***
+@keyframes hidden {
+  100% { transform: translateY(0); opacity: 1;}
+}
+
+// *** circle progress bar ***
+@keyframes circle-html5 {
+  to {
+      stroke-dashoffset: 23.55;
+  }
+}
+
+@keyframes circle-css3 { 
+  to {
+      stroke-dashoffset: 23.55;
+  }
+}
+
+@keyframes circle-js { 
+  to {
+    stroke-dashoffset: 70.65;
+  }
+}
+
+@keyframes circle-sass { 
+  to {
+    stroke-dashoffset: 47.1;
+  }
+}
+
+@keyframes circle-react { 
+  to {
+    stroke-dashoffset: 117.75;
+  }
+}
+
+@keyframes circle-jQuery { 
+  to {
+    stroke-dashoffset: 117.75;
+  }
+}
+
+// *** 동그라미 위아래 움직이는 효과 ***
+@keyframes downUp{
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(0, 50px); }
+} 
+
+@keyframes upDown{
+  0% { transform: translate(0, 0px); }
+  100% { transform: translate(0, -50px); }
+}
+
+// *** pf 비디오 페이드인 ***
+@keyframes fade-ts {
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+// * ===================== header ===================== *
+
+header {
+  position: relative;
+  overflow-x: hidden;
+
+  .back1,
+  .back2 {
+    display: none;
+    z-index: -2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    animation: move 600ms forwards;
+    @include responsive(desktop-lg-screens) {
+      display: block;
+    }
+  }
+  
+  .back1 {
+    background-color: $lighter-orange;
+  }
+  
+  .back2 {
+    background-color: #fff;
+    animation-delay: 500ms;
+  }
+
+  .logo-menu-bg-wrap {
+    position: fixed;
+    right: 0px; left: 0px; top: 0;
+    z-index: 999;
+    // height: 75px;
+    transition: all 500ms linear;
+    
+    &.active {
+      background-color: rgba(249, 206, 140, 0.8);
+      backdrop-filter: blur(1px);
+
+      &::after {
+        position: absolute;
+        top: 75px;
+        display: block;
+        content: "";
+        width: 100%;
+        height: 1px;
+        box-shadow: inset 0 1px 0 rgba(243, 156, 18, 0.3);
+      }
+    }
+
+    @include responsive(tablet-screens) {
+      height: 80px;
+    }
+    
+    .logo-menu-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 75px;
+
+      @include responsive(tablet-screens) {
+        height: 80px;
+      }
+      
+      @include responsive(desktop-lg-screens) {
+        opacity: 0;
+        transform: translateY(6rem);
+        animation: up 500ms linear forwards;
+        animation-delay: 1.5s;
+      }
+  
+      .logo {
+        display: flex;
+        align-items: center;
+  
+        a {
+          img {
+            display: block;
+            height: 60px;
+          }
+  
+          &.hg1024 {
+            display: none;
+  
+  
+            @include responsive(desktop-screens) {
+              display: block;
+              padding-left: 1.5rem;
+            }
+          }
+        } // a
+      } // logo
+  
+      .gnb {
+        display: flex;
+
+        li {
+          &.hg768 {
+            display: none;
+            
+            @include responsive(tablet-screens) {
+              display: block;
+              margin: 0 1rem;
+            }
+  
+            @include responsive(desktop-screens) {
+              margin: 0 2rem;
+            }
+          }
+  
+          &:nth-child(5) {
+            margin-right: 0;
+
+            @include responsive(desktop-lg-screens) {
+              margin-right: 3rem;
+            }
+          }
+  
+          &.mobile {
+            display: block;
+  
+            @include responsive(tablet-screens) {
+              display: none;
+            }
+          } // mobile
+  
+          a {
+            @include responsive(desktop-screens) {
+              &::after {
+                display: block;
+                content: "";
+                width: 0;
+                height: 2px;
+                background-color: #fff;
+                transition: all 400ms ease-in;
+              }
+              
+              &:hover::after {
+                width: 100%;
+              }
+            }
+
+            @include responsive(desktop-lg-screens) {
+              color: #fff;
+            }
+          } // a
+
+          button[type=button] {
+            outline: 0;
+            border: 0;
+            background: 0;
+            position: relative;
+            margin: 0.8rem 0;
+            padding: 0.9rem 1rem;
+            padding-right: 0;
+            cursor: pointer;
+
+            span {
+              display: block;
+              width: 34px;
+              height: 2px;
+              background-color: #000;
+              margin: 1rem 0;
+            }
+          }
+  
+        } // li
+      } // gnb      
+    } // logo-menu-wrap
+
+    .mobile-menu {
+      display: none;
+      opacity: 0;
+      height: 100%;
+      max-height: 0;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      
+      &::before {
+        display: table;
+        content: "";
+      }
+
+      
+      &.active {
+        display: block;
+        opacity: 1;
+      }
+
+      ul {
+        margin: 0.75rem -1.5rem;
+
+  
+        li {
+          position: relative;
+
+          a {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            font-size: 1.4rem;
+          }
+        }
+      }
+    } // mobile-menu
+
+  } // nav.logo-menu-bg-wrap
+
+  .line {
+    @include responsive(desktop-lg-screens) {
+      position: absolute;
+      right: 83px; top: 0;
+      width: 1.5px;
+      height: 100%;
+      background-color:#fff;
+      opacity: 0;
+      animation: opa 1.5s forwards;
+      animation-delay: 800ms;
+    }
+  }
+
+  .line-txt {
+    display: none;
+    @include responsive(desktop-lg-screens) {
+      display: block;
+      position: absolute;
+      right: 6px; bottom: 200px;
+      font-size: 5rem;
+      padding: 0 0.5rem;
+      color: #fff;
+      background-color: $lighter-orange;
+      transform: rotate(90deg);
+      opacity: 0;
+      animation: opa 1.5s forwards;
+      animation-delay: 800ms;
+    }
+  }
+
+  .header-content-wrap {
+    padding-top: 75px;
+    padding-bottom: 8rem;
+    
+    @include responsive(desktop-screens) {
+      padding-top: 80px;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+    
+    .home-img {
+      flex: 5%;
+      .home-bg {
+        @include responsive(desktop-lg-screens) {
+          z-index: -1;
+          position: absolute;
+          right: 20px; top: 0;
+          display: block;
+          height: 100%;
+          background-color: $lighter-orange;
+          width: 0;
+          animation: rightmove 500ms forwards;
+          animation-delay: 700ms;
+        }
+      } // home-bg
+      
+      picture {
+        display: block;
+        @include responsive(desktop-lg-screens) {
+          margin-right: 13rem;
+          margin-top: 3rem;
+          overflow: hidden;
+        }
+        
+        source,
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+          
+          @include responsive(desktop-screens) {
+            margin-left: 20%;
+            width: 80%;
+          }
+
+          @include responsive(desktop-lg-screens) {
+            margin-left: 5%;
+            width: 600px;
+            opacity: 0;
+            transform: translateY(514px);
+            animation: hidden 600ms forwards;
+            animation-delay: 1.1s;
+          }
+        }
+      }
+    } // home-img
+
+    .home-text {
+      padding-top: 4.3rem;
+      
+      @include responsive(desktop-screens) {
+        width: 45%;
+        padding-top: 0;
+      }
+
+      @include responsive(desktop-lg-screens) {
+        padding-top: 4.3rem;
+        transform: translateY(6rem);
+        opacity: 0;
+        animation: up 500ms linear forwards;
+        animation-delay: 1.5s;
+      }
+      
+      h1 {
+        padding-bottom: 2.5rem;
+        word-break: keep-all;
+        font-size: 10vw;
+        color: #000;
+
+        @include responsive(tablet-screens) {
+          font-size: 6rem;
+        }
+        @include responsive(desktop-screens) {
+          padding-bottom: 0;
+          line-height: 1.5;
+        }
+        @include responsive(desktop-lg-screens) {
+          font-size: 7rem;
+        }
+
+        div {
+          @include responsive(desktop-screens) {
+            display: block;
+            font-size: 5rem;
+            margin-bottom: 3.3rem;
+          }
+
+          @include responsive(desktop-lg-screens) {
+            font-size: 6rem;
+          }
+
+          .txt-color {
+            color: $orange;
+
+            .typing-txt {
+              display: inline;
+  
+              &::after {
+                display: inline-block;
+                content: "";
+                position: relative;
+                top: 5px;
+                width: 1px;
+                height: 10vw;
+                opacity: 1;
+                background-color: $orange;
+
+                @include responsive(tablet-screens) {
+                  height: 6rem;
+                }
+
+                @include responsive(desktop-screens) {
+                  height: 5rem;
+                }
+                
+                @include responsive(desktop-lg-screens) {
+                  height: 6rem;
+                }
+              }
+  
+              &.active::after {
+                opacity: 0;
+              }
+            } // typing-text
+          } // txt-color
+
+          .my-name {
+            text-decoration: underline #f39c12 10px;
+            text-underline-offset: -1.5px;
+          }
+        } // div
+      } // h1
+
+      p {
+        color: #000;
+        line-height: 1.8;
+
+        .underline {
+          text-decoration: underline #f39c12 4px;
+          text-underline-offset: -1.5px;
+        }
+      }
+
+      .notion-btn {
+        margin-top: 3rem;
+        font-size: 1.6rem;
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 1px;
+        border: 1px solid $orange;
+      }
+    } // home-text
+
+  }
+} // header
+
+
+// * ===================== main ===================== *
+
+main {
+  font-size: 1.6rem;
+
+  .about-wrap {
+    padding-top: $top;
+    padding-bottom: $bottom;
+
+    #svg-line {
+      display: none;
+      z-index: -2;
+      width: 100vw;
+      @include pos-center();
+
+      @include responsive(tablet-screens) {
+        display: block;
+      }
+
+      @include responsive(desktop-screens) {
+        width: 100%;
+      }
+
+      path {
+        fill: none;
+        color: #fff;
+      }
+    }
+
+    .flex-box {
+      @include responsive(tablet-screens) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      
+      .about-title {
+        @include responsive(tablet-screens) {
+          width: 40%;
+          padding-bottom: 5rem;
+        }
+
+        h2 {
+          font-size: 6rem;
+          line-height: 1;
+          padding-bottom: 5rem;
+  
+          @include responsive(tablet-screens) {
+            padding-bottom: 0;
+            font-size: 8rem;
+          }
+
+          @include responsive(desktop-screens) {
+            font-size: 14rem;
+          }
+  
+          .hide-me {
+            display: inline-block;
+            @include responsive(tablet-screens) {
+              display: none;
+            }
+          }
+        }
+  
+        .show-me { // 태블릿 버전부터 보이기
+          display: none;
+          @include responsive(tablet-screens) {
+            display: block;
+            font-size: 8rem;
+            margin-left: 20rem;
+          }
+          @include responsive(desktop-screens) {
+            font-size: 14rem;
+            margin-left: 35rem;
+          }
+        }
+      } // about-title
+  
+      .about-text {
+        @include responsive(tablet-screens) {
+          width: 50%;
+        }
+
+        table {
+          font-size: 18px;
+          text-align: left;
+          color: #000;
+  
+          th {
+            padding: 0.3rem 0;
+            padding-right: 1.5rem;
+
+            &.strength {
+              @include responsive(tablet-screens) {
+                display: none;
+              }
+            }
+          }
+          
+          td {
+            word-break: keep-all;
+          }
+        } // table
+    }
+    
+      .strength-content {
+        color: #000;
+
+        h3 {
+          display: none;
+          @include responsive(tablet-screens) {
+            display: block;
+            font-size: 1.8rem;
+          }
+
+        }
+
+        .sth-123 {
+          @include responsive(desktop-screens) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-column-gap: 2rem;
+          }
+
+          & > div {
+            position: relative;
+            
+            strong {
+              padding-top: 2rem;
+              word-break: keep-all;
+              font-size: 2rem;
+
+              .thumbs {
+                display: inline-block;
+              }
+            } // strong
+
+            &.strength-2 > strong,
+            &.strength-3 > strong {
+              margin-top: 2rem;
+              @include responsive(desktop-screens) {
+                margin-top: 0;
+              }
+            }
+            
+            p {
+              padding-top: 1rem;
+              word-break: break-all;
+              font-size: 1.6rem;
+              font-size: 1.8rem;
+              
+              &.eng {
+                position: absolute;
+                top: -5px; left: 5px;
+                padding-top: 0;
+                z-index: -1;
+                color: $lighter-orange;
+                opacity: 0.8;
+                font-size: 3.3rem; // 💡 폰트 크기를 바꿀까 고민 중
+              }
+            } // p
+          } // div
+  
+        } // sth-123
+        
+      } // strength-content
+
+    } // about-text
+  } // about-wrap
+
+  .skills-wrap {
+    margin-top: 8rem;
+    background-color: $lighter-orange;
+    
+    @include responsive(tablet-screens) {
+      padding-bottom: 6rem;
+    }
+    
+    @include responsive(desktop-screens) {
+      padding-bottom: $bottom;
+    }
+
+    @include responsive(desktop-lg-screens) {
+      background-color: transparent;
+    }
+
+    .skills-wrap-bg {
+      position: relative;
+      padding-bottom: $bottom;
+      background-color: $lighter-orange;
+
+      .bg-txt {
+        @include pos-center-x();
+        padding-top: 2rem;
+        font-size: 16vw;
+
+        @include responsive(desktop-lg-screens) {
+          padding-top: 0;
+          font-size: 20rem;
+        }
+      }
+
+      .desc-circle {
+        position: relative;
+        top: 14vw;
+        width: 100%;
+        height: 100%;
+
+        @include responsive(desktop-lg-screens) {
+          top: 30px;
+        }
+
+        .desc {
+          line-height: 2;
+          text-align: center;
+          color: #000;
+    
+          @include responsive(tablet-screens) {
+            width: 63%;
+            margin: 0 auto;
+          }
+  
+          h2 {
+            font-size:  calc(20px + 5vw);
+            @include responsive(desktop-lg-screens) {
+              padding-top: 14rem;
+              font-size: 7rem;
+            }
+          }
+    
+          p {
+            padding-top: 2.5rem;
+            word-break: break-all;
+          }
+        } // desc
+    
+        .skills-circle-wrap {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: row;
+          flex-wrap: wrap;
+          padding-top: 7.8rem;
+          
+          @include responsive(tablet-screens) {
+            // padding-bottom: 7rem; // 💡 학원 데스크톱에서는 테블릿 버전부터만 패딩주면 될 것으로 보임 but 다른 기기에서도 bottom 체크 필요
+          }
+          
+          @include responsive(desktop-screens) {
+            justify-content: space-around;
+            flex-wrap: nowrap;
+          }
+    
+          .skill {
+            width: 49.9999999999%;
+    
+            @include responsive(tablet-screens) {
+              width: 30.9999999999%;
+            }
+
+            @include responsive(desktop-screens) {
+              width: 20.999999999%;
+            }
+    
+            .img-box {
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              z-index: 2;
+
+              @include responsive(desktop-screens) {
+                &.a,
+                &.c,
+                &.e {
+                  animation: downUp 1s infinite alternate;  
+                }
+  
+                &.b,
+                &.d,
+                &.f {
+                  animation: upDown 1s infinite alternate;
+                }
+              }
+    
+              .skill-img {
+                @include pos-center();
+                z-index: 10;
+
+                .circle {
+                  margin: 0 auto;
+                  width: 100%;
+                  border-radius: 50%;
+                }
+
+                .percent {
+                  @include pos-center();
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  text-align: center;
+                  width: 100%;
+                  height: 100%;
+                  text-align: center;
+                  font-size: 2rem;
+                  border-radius: 50%;
+                  color: $orange;
+                  opacity: 0;
+                  background-color: rgba(255, 255, 255, 0.8);
+
+                  @include responsive(tablet-screens) {
+                    font-size: 2.6rem;
+                  }
+                  @include responsive(desktop-screens) {
+                    font-size: 2.6rem;
+                  }
+
+                  &.show {
+                    opacity: 1;
+                  }
+                } // percent
+              } // skill-img
+    
+              &:hover .percent {
+                opacity: 1;
+              }
+    
+              svg {
+                transform: rotate(-90deg);
+    
+                circle {
+                  fill: none;
+                  stroke: rgba(255, 255, 255, 0.8);
+                  stroke-miterlimit: 10;
+                  stroke-width: 12px;
+                  stroke-dasharray: 471;
+                  stroke-dashoffset: 471;
+                  stroke-linecap: round;
+                  animation-timing-function: ease-in-out;
+                  animation-duration: 1s;
+                  animation-fill-mode: forwards;
+    
+                  &.html5 {
+                    animation-name: circle-html5;
+                  }
+
+                  &.css3 {
+                    animation-name: circle-css3;
+                  }
+    
+                  &.sass {
+                    animation-name: circle-sass;
+                  }
+    
+                  &.js {
+                    animation-name: circle-js;
+                  }
+    
+                  &.react {
+                    animation-name: circle-react;
+                  }
+    
+                  &.jQuery {
+                    animation-name: circle-jQuery;
+                  }
+                }
+              } // svg
+            } // img-box
+          } // skill
+        } // skills-circle-wrap
+      } // desc-circle
+
+      .line-txt {
+          display: none;
+        @include responsive(desktop-lg-screens) {
+          display: block;
+          position: absolute;
+          left: -4px; top: 160px;
+          font-size: 5rem;
+          padding: 0 0.5rem;
+          color: #fff;
+          background-color: $lighter-orange;
+          transform: rotate(-90deg);
+        }
+      }
+
+      .line {
+        @include responsive(desktop-lg-screens) {
+          position: absolute;
+          left: 83px; top: 0;
+          width: 1.5px;
+          height: 100%;
+          background-color:#fff;
+        }
+      }
+
+    } // skills-wrap-bg
+  } // skills-wrap
+
+  .portfolio-wrap {
+    padding-top: $top;
+    padding-bottom: $bottom;
+    
+    .pf-title {
+      font: {
+        family: $basic-font;
+        size: $title-font-size;
+      }
+      color: $orange;
+      @include responsive(tablet-screens) {
+        font-size: 8rem;
+      }
+      @include responsive(desktop-screens) {
+        font-size: 14rem;
+      }
+
+    }
+
+    .sub-title {
+      display: inline-block;
+      padding: 0.4rem 0.6rem;
+      padding-right: 1.2rem;
+      font-size: 1.4rem;
+      color: #fff;
+      background-color: #000;
+
+      @include responsive(tablet-screens) {
+        font-size: 1.6rem;
+      }
+    }
+    
+    // ==================== portfolio-wrap 내에서의 공통 소스
+    h2 {
+      @include point-font();
+      font-size: 4.8rem;
+      color: #000;
+    }
+    
+    h3 {
+      font-weight: 500;
+      font-size: 4rem;
+      line-height: 1.4;
+      padding-bottom: 4.6rem;
+    }
+
+    h4 {
+      padding-top: 2rem;
+      padding-bottom: 1rem;
+      font-size: 2.8rem;
+
+      @include responsive(desktop-screens) {
+        padding-top: 0;
+      }
+    }
+
+    p {
+      color: #000;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .pf {
+      @include responsive(desktop-screens) {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 7.5rem;
+      }
+
+      .pf-img {
+        @include responsive(desktop-screens) {
+          flex: 40%;
+        }
+
+        video {
+          width: 100%;
+          height: 66.666%;
+          min-height: 197px;
+          max-height: 500px;
+          object-fit: fill;
+          overflow: hidden;
+          transition: all 800ms;
+          box-shadow: rgba(0, 0, 0, 0.18) 3px 4px 4px;
+      
+          @include responsive(desktop-screens) {
+            width: 92%;
+            height: 380px;
+            margin-bottom: 3rem;
+          }
+
+          @include responsive(desktop-lg-screens) {
+            height: 397px;
+          }
+
+          &.pf-video {
+            opacity: 0;
+            transform: translateY(4rem);
+
+            &.scroll-fade-ts {
+              animation: fade-ts 0.8s ease-in-out forwards;
+            } 
+          } // pf-video
+        } // video
+
+      } // pf-img
+
+      .pf-desc-link {
+        @include responsive(desktop-screens) {
+          flex: 30%;
+        }
+    
+        .pf-desc {
+          padding-top: 1.5rem;
+          font-size: 1.8rem;
+        }
+    
+        .link {
+          text-align: right;
+    
+          a {
+            text-align: center;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            margin: 3.5rem 0.75rem 7.8rem;
+            border-radius: 5px;
+            border: 1px solid $orange;
+            font-size: 1.6rem;
+
+            &:nth-child(2),
+            &:nth-child(3) {
+                width: 48px;
+              }
+    
+            &:last-child {
+              margin-right: 0;
+            }
+          } // a
+        } // link
+
+      } // pf-desc-link
+    } // pf
+
+
+    // 공통 소스 끝 ====================
+
+    .wbpg-wrap {
+      padding-top: 5rem;
+      h2,
+      h3 {
+        text-align: right;
+      }
+
+      h2 {
+        padding-right: 1.2rem;
+      }
+
+      .bluesquare {
+        .link {
+          a {
+            &:nth-child(2) {
+              width: auto;
+            }
+
+            &:nth-child(3),
+            &:nth-child(4) {
+                width: 48px;
+              }
+          }
+        }
+      }
+    } // wbpg-wrap
+
+    .js-wrap {
+      padding-top: 5rem;
+      h2,
+      h3 {
+        text-align: left;
+      }
+
+      h2 {
+        padding-left: 1.2rem;
+      }
+
+      .link {
+        a {
+          width: 48px;
+        }
+      } // link
+    } // js-wrap
+
+    .react-wrap {
+      padding-top: 5rem;
+      h2,
+      h3 {
+        text-align: right;
+      }
+
+      h2 {
+        padding-right: 1.2rem;
+      }
+    } // react-wrap 
+
+  } // portfolio-wrap
+
+  .contact-wrap {
+    padding-top: $top;
+    padding-bottom: $bottom;
+    background-image: url(../img/bg_m.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+
+    @include responsive(tablet-screens) {
+      padding-left: 6rem;
+      padding-right: 6rem;
+      background-image: url(../img/bg_lg.jpg);
+    }
+
+    form {
+      max-width: 728px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      background-color: #e0e0e0;
+
+      .info-box {
+        margin-bottom: 2rem;
+        @include responsive(tablet-screens) {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        input {
+          outline: 0;
+          border: 0;
+          background: 0;
+          padding: 1rem 2rem;
+          width: 100%;
+          font-size: 1.6rem;
+          font-family: $basic-font;
+          border-bottom: 1px solid #000;
+
+          @include responsive(tablet-screens) {
+            margin-right: 4rem;
+          }
+
+          &:last-child {
+            @include responsive(tablet-screens) {
+              margin-right: 0;
+            }
+          }
+
+          &::placeholder {
+            color: $lighter-black;
+            font-weight: 400;
+            font-family: $basic-font;
+          }
+        }
+      } // info-box
+
+      .message-box {
+        textarea {
+          outline: 0;
+          border: 0;
+          background: 0;
+          resize: none;
+          padding: 1rem 2rem;
+          width: 100%;
+          height: 300px;
+          font-size: 1.6rem;
+          font-family: $basic-font;
+          border: 1px solid #000;
+  
+          &::placeholder {
+            color: $lighter-black;
+            font-weight: 400;
+            font-family: $basic-font;
+          }
+        }
+      } // message-box
+
+      .send-btn {
+        text-align: right;
+
+        button {
+          outline: 0;
+          border: 0;
+          width: 90px;
+          height: 38px;
+          margin-top: 2.6rem;
+          color: #fff;
+          background-color: $lighter-black;
+          font: {
+            size: 1.6rem;
+            family: $basic-font;
+            weight: 400;
+          }
+          cursor: pointer;
+          
+          &:hover {
+            transition: all 300ms;
+            box-shadow: 0 80px 0 0  rgba(0,0,0,0.28) inset;
+          }
+        } // button
+      } // send-btn
+    } // form
+
+  } // contact-wrap
+} // main
+
+
+// * ===================== footer ===================== *
+
+footer {
+  .content-sns-wrap {
+    position: relative;
+    padding: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include responsive(desktop-screens) {
+      flex-direction: row;
+      justify-content: right;
+    }
+
+    .ft-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @include responsive(desktop-screens) {
+        @include pos-center();
+      }
+
+      img {
+        width: 50px;
+        height: auto;
+      }
+      
+      div {
+        font-size: 1.4rem;
+        padding-left: 1rem;
+        color: #000;
+      }
+    } // ft-content
+
+    .ft-sns {
+      display: flex;
+      
+      a {
+        margin: 1rem;
+        &:last-child {
+          margin-right: 0;
+        }
+
+        img {
+          width: 35px;
+          height: auto;
+        }
+      }
+    } // ft-sns
+
+  } // content-sns-wrap
+} // footer

@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+.wrap {
+    position: relative;
+    height: 100vh;
+    background-color: seashell;
+}
+
+.title {
+    padding-top: 50px;
+    font-size: 50px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.lotto_wrap {
+    margin: 50px auto 0;
+    padding: 25px 30px;
+    width: 500px;
+    text-align: center;
+    border: 1px solid pink;
+}
+
+.lotto_title {
+    padding-bottom: 20px;
+    font-size: 32px;
+}
+
+.lotto_des {
+    padding-bottom: 15px;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.date_wrap {
+    display: flex;
+    padding: 10px;
+    padding-bottom: 20px;
+    text-align: left;
+    line-height: 1.2;
+    font-size: 18px;
+    border-bottom: 2px dashed black;
+}
+
+.list-wrap {
+    padding: 20px 10px 0;
+}
+
+.list_box {
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+}
+
+.list_box > div {
+    padding: 15px 10px;
+} 
+
+.btn_wrap {
+    width: 100%;
+    text-align: center;
+}
+
+.start {
+    margin-top: 50px;
+    padding: 10px 20px;
+    text-align: center;
+    color: rgb(252, 169, 183);
+    font: 18px 'BMJua';
+    border-radius: 10px;
+    border: 2px solid pink;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.start:hover {
+    color: white;
+    background-color: rgb(252, 169, 183);
+}

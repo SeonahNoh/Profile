@@ -1,0 +1,72 @@
+@mixin responsive($break-point) { 
+  @if($break-point == mobile-screens) {
+      @media screen and (min-width:$break-mobile) {
+          @content;
+      }
+  }
+
+  @else if($break-point == tablet-screens) {
+      @media screen and (min-width:$break-tablet) {
+          @content;
+      }
+  }
+
+  @else if($break-point == desktop-screens) {
+      @media screen and (min-width:$break-desktop) {
+          @content;
+      }
+  }
+
+  @else if($break-point == desktop-lg-screens) {
+    @media screen and (min-width:$break-desktop-lg) {
+        @content;
+    }
+  }
+}
+
+@mixin pos-center-x($type: absolute) { // 수평 가운데 정렬
+  @if($type == fixed or $type == absolute ){
+      position: $type;
+      left: 50%;
+      transform: translateX(-50%);
+      @content;
+  }
+}
+
+@mixin pos-center-y($type: absolute) { // 수직 가운데 정렬
+  @if($type == fixed or $type == absolute ){
+      position: $type;
+      top: 50%;
+      transform: translateY(-50%);
+      @content;
+  }
+}
+
+@mixin pos-center($type: absolute) { // 수직수평 가운데 정렬
+  @if($type == fixed or $type == absolute) {
+      position: $type;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      @content;
+  }
+}
+
+@mixin flex-box($jc: space-between) { // flex 박스 설정
+  display: flex;
+  justify-content: $jc;
+  @content;
+}
+
+@mixin clear-fix() { // float 사용 후 clear 처리
+  &::after {
+      content: "";
+      display: block;
+      clear: both;
+  }
+}
+
+@mixin point-font($weight: 700) {
+  font-family: 'Cinzel', serif;
+  font-weight: $weight;
+}

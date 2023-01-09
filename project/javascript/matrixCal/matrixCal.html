@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="NohSeonah">
+    <meta name="keyword" content="Matrix Calculator">
+	<meta name="description" content="Matrix Calculator">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/matrixCal.css">
+    <script src="https://kit.fontawesome.com/02fac5dfa7.js" crossorigin="anonymous"></script>
+    <script src="./js/matrixCal.js"></script>
+    <title>Matrix Calculator</title>
+</head>
+<body>
+    <div class="wrap">
+        <div class="abBoxWrap">
+            <!-- 상단 타이틀 -->
+            <div class="title">
+                <h1>Matrix Calculator</h1>
+                <p>6행 6열까지 입력 가능합니다.</p>
+            </div> <!-- title -->
+    
+            <!-- 행렬/버튼 박스 -->
+            <div class="abBox">
+                <div class="flex-box">
+                    <!-- A 행렬 -->
+                    <div class="aBox">
+                        <h2>Matrix A</h2>
+                        <input type="text" id="aBoxRow" maxlength="1" min="0" max="6" step="1" required autofocus placeholder="행" oninput="this.value = this.value.replace(/[^1-6.]/g, '');"> <i class="fa-solid fa-x multiply"></i>
+                        <input type="text" id="aBoxCol" maxlength="1" min="0" max="6" step="1" required autofocus placeholder="열" oninput="this.value = this.value.replace(/[^1-6.]/g, '');"> <span class="go">Go!</span>
+                    <div class="outputA"></div>
+    
+                    </div> <!-- aBox -->   
+                    
+                    <!-- 버튼 -->
+                    <div class="btnBox">
+                        <i class="fa-regular fa-plus plusBtn"></i>
+                        <i class="fa-solid fa-minus minusBtn"></i>
+                        <i class="fa-solid fa-x multiplyBtn"></i>
+                    </div> <!-- btnBox -->
+                    
+                    <!-- B 행렬 -->
+                    <div class="bBox">
+                        <h2>Matrix B</h2>
+                        <input type="text" id="bBoxRow" maxlength="1" min="0" max="6" step="1" required autofocus placeholder="행" oninput="this.value = this.value.replace(/[^1-6.]/g, '');"> <i class="fa-solid fa-x multiply"></i>
+                        <input type="text" id="bBoxCol" maxlength="1" min="0" max="6" step="1" required autofocus placeholder="열" oninput="this.value = this.value.replace(/[^1-6.]/g, '');"> <span class="go">Go!</span>
+                        <div class="outputB"></div>
+                    </div> <!-- bBox -->
+                </div> <!-- flex-box -->
+
+                <!-- 버튼2 -->
+                <div class="btnBox2">
+                    <div class="randomBtn">Random</div>
+                    <div class="clearBtn">Clear</div>
+                    <div class="allOneBtn">All One</div>
+                </div>
+            </div> <!-- abBox -->
+        </div> <!-- abBoxWrap -->
+
+        <!-- 배열 -->
+        <div class="outputBoxWrap">
+            <span></span>
+            <span></span>
+            <h2>결과 보기</h2>
+            <div class="outputAB"></div>
+        </div> <!-- outputBoxWrap -->
+
+        <!-- 탑 버튼 -->
+        <div class="topWrap">
+            <div class="topBtn" onclick="window.scrollTo({top:0, behavior: 'smooth'})">▲ Top</div>
+        </div>
+    </div> <!-- wrap -->
+</body>
+</html>
