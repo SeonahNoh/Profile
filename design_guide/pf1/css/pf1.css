@@ -380,7 +380,7 @@ main .color .sq-wrap .sq-3 .sq {
   width: 230px;
   height: 230px;
   border-radius: 15px;
-  background-color: #cacaca;
+  background-color: rgb(202, 202, 202);
 }
 main .grid_system {
   margin-top: 20rem;

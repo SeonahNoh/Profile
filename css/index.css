@@ -1073,6 +1073,9 @@ main .portfolio-wrap .react-wrap h3 {
 main .portfolio-wrap .react-wrap h2 {
   padding-right: 1.2rem;
 }
+main .portfolio-wrap .react-wrap .link a {
+  width: 48px;
+}
 main .contact-wrap {
   padding-top: 10rem;
   padding-bottom: 12rem;
