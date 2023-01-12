@@ -1,0 +1,415 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Noto Sans KR";
+  font-size: 62.5%;
+  line-height: 1.5;
+  color: black;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  font-size: 1.6rem;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 4.8rem;
+}
+
+h3 {
+  font-size: 3.8rem;
+}
+
+h4 {
+  font-size: 2.4rem;
+}
+
+p {
+  word-break: keep-all;
+  line-height: 2;
+  font-size: 1.6rem;
+}
+
+strong {
+  display: block;
+}
+
+header,
+nav,
+main,
+article,
+section,
+footer {
+  display: block;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+@media screen and (min-width:1440px) {
+  .container {
+    width: 1440px;
+  }
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+header {
+  width: 100%;
+  height: 1200px;
+}
+header .header-wrap {
+  width: 100%;
+  height: 803px;
+  background: linear-gradient(rgba(243, 156, 18, 0.8), rgba(243, 156, 18, 0.6), rgba(0, 0, 0, 0));
+}
+header .header-wrap .title h1 {
+  padding-top: 8rem;
+  font-size: 5rem;
+  color: #fff;
+}
+@media screen and (min-width:768px) {
+  header .header-wrap .title h1 {
+    font-size: 8rem;
+  }
+}
+@media screen and (min-width:1024px) {
+  header .header-wrap .title h1 {
+    font-size: 9rem;
+  }
+}
+header .header-wrap .title h1 .thin {
+  font-size: 3.8rem;
+  font-weight: 400;
+}
+@media screen and (min-width:768px) {
+  header .header-wrap .title h1 .thin {
+    font-size: 4rem;
+  }
+}
+@media screen and (min-width:1024px) {
+  header .header-wrap .title h1 .thin {
+    font-size: 4.6rem;
+  }
+}
+header .header-wrap .img img {
+  margin: 0 auto;
+  margin-top: 20rem;
+}
+@media screen and (min-width:1440px) {
+  header .header-wrap .img img {
+    width: 90%;
+    max-width: 1300px;
+  }
+}
+
+main {
+  margin-top: 10rem;
+}
+main .strategy h2 .list_num {
+  display: inline-block;
+  font-size: 2.8rem;
+  vertical-align: top;
+}
+main .strategy h2 .list_num::after {
+  display: block;
+  content: "";
+  margin-top: -5px;
+  width: 100%;
+  height: 3px;
+  background-color: #e67e22;
+}
+main .strategy .weakness {
+  padding-top: 4rem;
+}
+main .strategy .weakness p {
+  padding-top: 1rem;
+  width: 90%;
+}
+main .strategy .concept {
+  margin-top: 7rem;
+}
+main .strategy .concept .circle_wrap {
+  margin-top: 8rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .strategy .concept .circle_wrap div {
+  width: 200px;
+  height: 200px;
+  margin: 0 20px;
+  text-align: center;
+  word-break: keep-all;
+}
+main .strategy .concept .circle_wrap div p {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  font-size: calc(2rem + 1vw);
+}
+@media screen and (min-width:768px) {
+  main .strategy .concept .circle_wrap div p {
+    font-size: 2.8rem;
+  }
+}
+main .strategy .concept .circle_wrap div p.p-1 {
+  background-color: #e67e22;
+}
+main .strategy .concept .circle_wrap div p.p-2 {
+  background-color: #f39c12;
+}
+main .strategy .concept .circle_wrap div p.p-3 {
+  background-color: #F7BA5B;
+}
+main .strategy .concept .circle_wrap div span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+}
+main .typography {
+  margin-top: 20rem;
+}
+main .typography h2 .list_num {
+  display: inline-block;
+  font-size: 2.8rem;
+  vertical-align: top;
+}
+main .typography h2 .list_num::after {
+  display: block;
+  content: "";
+  margin-top: -5px;
+  width: 100%;
+  height: 3px;
+  background-color: #e67e22;
+}
+main .typography .img_and_font {
+  padding-top: 6rem;
+  display: flex;
+  justify-content: space-between;
+}
+main .typography .img_and_font .img {
+  width: 50%;
+}
+main .typography .img_and_font .img img {
+  width: 93.3333%;
+}
+main .typography .img_and_font .fonts {
+  width: 40%;
+}
+main .typography .img_and_font .fonts .gray {
+  font-size: 1.6rem;
+  color: gray;
+}
+main .typography .img_and_font .fonts h4 {
+  font-size: 3.8rem;
+  padding-bottom: 1.5rem;
+}
+main .typography .img_and_font .fonts .font p {
+  letter-spacing: -1px;
+  font-size: 2.4rem;
+  font-family: "NanumSquare", sans-serif;
+}
+main .color {
+  margin-top: 20rem;
+}
+main .color h2 .list_num {
+  display: inline-block;
+  font-size: 2.8rem;
+  vertical-align: top;
+}
+main .color h2 .list_num::after {
+  display: block;
+  content: "";
+  margin-top: -5px;
+  width: 100%;
+  height: 3px;
+  background-color: #e67e22;
+}
+main .color .main_sub_mobile {
+  padding-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+main .color .main_sub_mobile h3 {
+  padding-bottom: 3.8rem;
+}
+main .color .main_sub_mobile .main-wrap {
+  width: 26%;
+}
+main .color .main_sub_mobile .main-wrap .main .sq {
+  position: relative;
+  width: 50%;
+  border-radius: 15px;
+  background-color: #e67e22;
+}
+main .color .main_sub_mobile .main-wrap .main .sq::after {
+  display: block;
+  content: "";
+  padding-bottom: 100%;
+}
+main .color .main_sub_mobile .main-wrap .main p {
+  font-size: 1.4rem;
+  padding-top: 0.7rem;
+}
+@media screen and (min-width:768px) {
+  main .color .main_sub_mobile .main-wrap .main p {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width:1024px) {
+  main .color .main_sub_mobile .main-wrap .main p {
+    padding-left: 1rem;
+    font-size: 1.8rem;
+  }
+}
+main .color .main_sub_mobile .sub-wrap {
+  position: relative;
+  width: 40%;
+}
+main .color .main_sub_mobile .sub-wrap .sub .sq_warp .sq {
+  position: absolute;
+  width: 32.5%;
+  border-radius: 15px;
+}
+main .color .main_sub_mobile .sub-wrap .sub .sq_warp .sq::after {
+  display: block;
+  content: "";
+  padding-bottom: 100%;
+}
+main .color .main_sub_mobile .sub-wrap .sub .hex {
+  width: 100%;
+  margin-top: 32.5%;
+  padding-top: 0.7rem;
+  display: flex;
+}
+main .color .main_sub_mobile .sub-wrap .sub .hex p {
+  font-size: 1.4rem;
+}
+@media screen and (min-width:768px) {
+  main .color .main_sub_mobile .sub-wrap .sub .hex p {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width:1024px) {
+  main .color .main_sub_mobile .sub-wrap .sub .hex p {
+    padding-left: 8rem;
+    font-size: 1.8rem;
+  }
+  main .color .main_sub_mobile .sub-wrap .sub .hex p:nth-child(1) {
+    padding-left: 1rem;
+  }
+}
+main .color .main_sub_mobile .mobile-wrap {
+  width: 25%;
+}
+main .color .main_sub_mobile .mobile-wrap .mobile img {
+  margin-left: 40%;
+  width: 60%;
+}
+main .grid_system {
+  margin-top: 20rem;
+}
+main .grid_system h2 .list_num {
+  display: inline-block;
+  font-size: 2.8rem;
+  vertical-align: top;
+}
+main .grid_system h2 .list_num::after {
+  display: block;
+  content: "";
+  margin-top: -5px;
+  width: 100%;
+  height: 3px;
+  background-color: #e67e22;
+}
+main .grid_system .info_img {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+main .grid_system .info_img .info {
+  width: 33.3333%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  padding-left: 2rem;
+}
+main .grid_system .info_img .info h3 {
+  color: rgba(230, 126, 34, 0.85);
+}
+main .grid_system .info_img .info p {
+  width: 100%;
+  padding: 2rem 0 4rem;
+  letter-spacing: -0.5px;
+  line-height: 1.8;
+  font-size: 1.8rem;
+}
+main .grid_system .info_img .bg {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+}
+main .grid_system .info_img .img {
+  width: 50%;
+  box-shadow: rgba(0, 0, 0, 0.18) 3px 4px 4px;
+}
+main .page_design {
+  margin-top: 20rem;
+  margin-bottom: 10rem;
+}
+main .page_design h2 .list_num {
+  display: inline-block;
+  font-size: 2.8rem;
+  vertical-align: top;
+}
+main .page_design h2 .list_num::after {
+  display: block;
+  content: "";
+  margin-top: -5px;
+  width: 100%;
+  height: 3px;
+  background-color: #e67e22;
+}
+main .page_design .main_page {
+  padding-top: 4rem;
+}
+main .page_design .main_page img {
+  margin: 0 auto;
+  margin-top: 3.8rem;
+  width: 750px;
+  box-shadow: -6px -5px 8px 3px rgba(0, 0, 0, 0.18);
+}

@@ -179,7 +179,6 @@ window.onload = function() {
     }
   }
 
-
   // *** About section으로 이동 시 라인 그려지기 ***
   window.addEventListener('scroll', () => {
     if(aboutWarp.offsetTop) {
@@ -222,6 +221,7 @@ window.onload = function() {
   // *** Skills section으로 이동 시 circle progress bar 실행 ***
   const $progress = document.getElementsByClassName('progress');
   let name = '';
+
   window.addEventListener('scroll', () => {
     let pos = window.scrollY;
     let skTop = skillsWarp.offsetTop;
@@ -305,7 +305,7 @@ window.onload = function() {
 
   // *** Pf section 스크롤 감지 동영상 재생 ***
   const pfVds = document.querySelectorAll('.pf-video');
-  
+
   const load = function() {
     let wH = window.innerHeight;    
     for(let i = 0; i < pfVds.length; i++) {
