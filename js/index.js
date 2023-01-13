@@ -82,26 +82,36 @@ window.onload = function() {
   M_home.addEventListener('click', e => {
     e.preventDefault();
     window.scrollTo({top: 0, behavior:'smooth'});
+    logoMeunBgWarp.classList.remove('active');
+    mobileMenu.classList.remove('active');
   }, false);
 
   M_about.addEventListener('click', e => {
     e.preventDefault();
-    window.scrollTo({top: aboutWarp.offsetTop - menuHg, behavior:'smooth'});
+    window.scrollTo({top: aboutWarp.offsetTop + 24, behavior:'smooth'});
+    logoMeunBgWarp.classList.remove('active');
+    mobileMenu.classList.remove('active');
   }, false);
 
   M_skills.addEventListener('click', e => {
     e.preventDefault();
     window.scrollTo({top: skillsWarp.offsetTop - menuHg, behavior:'smooth'});
+    logoMeunBgWarp.classList.remove('active');
+    mobileMenu.classList.remove('active');
   }, false);
 
   M_portfolio.addEventListener('click', e => {
     e.preventDefault();
     window.scrollTo({top: portfolioWarp.offsetTop - menuHg + 100, behavior:'smooth'});
+    logoMeunBgWarp.classList.remove('active');
+    mobileMenu.classList.remove('active');
   }, false);
 
   M_contact.addEventListener('click', e => {
     e.preventDefault();
-    window.scrollTo({top: contactWarp.offsetTop, behavior:'smooth'});
+    window.scrollTo({top: contactWarp.offsetTop - 74, behavior:'smooth'});
+    logoMeunBgWarp.classList.remove('active');
+    mobileMenu.classList.remove('active');
   }, false);
 
 
