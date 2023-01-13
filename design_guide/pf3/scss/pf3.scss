@@ -59,6 +59,39 @@ header {
         }
       }
     } // title h1
+
+    .btn_box {
+      margin-top: 30px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      a {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 40px;
+        font-size: 1.8rem;
+        font-family: 'Noto Sans KR';
+        color: #fff;
+        border: 1px solid transparent;
+        border-radius: 6px;
+        background-color: #e67e22;
+        transition: all 0.2s ease 0s;
+        
+        &:hover {
+          font-size: 2rem;
+          background-color: #f39c12;
+        }
+
+        &.git {
+          margin-right: 20px;
+        }
+      }
+    } // btn_box
   
     .img img {
       margin: 0 auto;

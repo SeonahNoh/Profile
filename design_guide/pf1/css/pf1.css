@@ -123,6 +123,34 @@ header .header-wrap .title h1 .thin {
     font-size: 4.6rem;
   }
 }
+header .header-wrap .btn_box {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .header-wrap .btn_box a {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 40px;
+  font-size: 1.8rem;
+  font-family: "Noto Sans KR";
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background-color: #E0EB4B;
+  transition: all 0.2s ease 0s;
+}
+header .header-wrap .btn_box a:hover {
+  font-size: 2rem;
+  background-color: #ECF390;
+}
+header .header-wrap .btn_box a.git {
+  margin-right: 20px;
+}
 header .header-wrap .img img {
   margin: 0 auto;
   margin-top: 20rem;
