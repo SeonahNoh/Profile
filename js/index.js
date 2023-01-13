@@ -3,7 +3,7 @@ window.onload = function() {
   const logoMeunBgWarp = document.querySelector('.logo-menu-bg-wrap');
   window.addEventListener('scroll', () => {
     let scrollPos = window.scrollY;
-    if(scrollPos > 250) {
+    if(scrollPos > 80) {
       logoMeunBgWarp.style.backgroundColor = 'rgba(249, 206, 140, 0.8)';
       logoMeunBgWarp.style.backdropFilter = 'blur(5px)';
     } else {
