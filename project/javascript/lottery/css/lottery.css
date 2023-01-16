@@ -42,6 +42,10 @@
     border-bottom: 2px dashed black;
 }
 
+td {
+    padding: 3px 0;
+}
+
 .list-wrap {
     padding: 20px 10px 0;
 }
@@ -54,7 +58,29 @@
 
 .list_box > div {
     padding: 15px 10px;
+    text-align: justify;
 } 
+
+._title {
+    width: 20%;
+}
+
+.auto {
+    width: 20%;
+}
+
+.ball {
+    margin-left: 20px;
+    margin-bottom: -19px;
+    width: 59%;
+}
+
+.ball::after {
+    display: inline-block;
+    content: "";
+    width: 100%;
+}
+
 
 .btn_wrap {
     width: 100%;

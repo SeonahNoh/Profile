@@ -3,16 +3,14 @@ const $publishInn = document.querySelector(".publish_inn");
 const $raffleInn = document.querySelector(".raffle_inn");
 const $paymentInn = document.querySelector(".payment_inn");
 const $startBtn = document.querySelector(".start");
-const $ball = document.querySelectorAll(".ball");
-let tmp = 1, numbers;
-let arr = [[], [], [], [], []];
-let listIdx = 0;
+const ball = document.getElementsByClassName("ball");
 
 window.onload = function() {
+    // * 제 N 회*
     let today = new Date();
     let thisYear = today.getFullYear();
-    let thisMonth = ("0" + (today.getMonth() + 1)).slice(-2);
-    let thisDate = ("0" + (today.getDate())).slice(-2);
+    let thisMonth = ("0" + (today.getMonth() + 1)).slice(-2); // 01~12 추출
+    let thisDate = ("0" + (today.getDate())).slice(-2); // 01~31 추출
 
     let sdd = "2020-05-30";
     let edd = thisYear + "-" + thisMonth + "-" + thisDate;
@@ -24,7 +22,7 @@ window.onload = function() {
     let day2 = new Date(arr2[0], arr2[1], arr2[2]);
 
     let diffDate = day2 - day1;
-    let process = parseInt(diffDate / (1000 * 60 * 60 * 24))
+    let process = parseInt(diffDate / (1000 * 60 * 60 * 24)); // 958
     let result = Math.floor(process / 7) + 914;
     console.log(result);
 
@@ -41,8 +39,8 @@ window.onload = function() {
     let publDay = publToday.getDay();
     
     let publHours = publToday.getHours();
-    let publMinutes = ("0" + publToday.getMinutes()).slice(-2);  
-    let publSeconds = ("0" + publToday.getSeconds()).slice(-2);
+    let publMinutes = ("0" + publToday.getMinutes()).slice(-2); // 00~60분
+    let publSeconds = ("0" + publToday.getSeconds()).slice(-2); // 00~60초
 
     let publTxt = `${publYear}/${publMonth}/${publDate}(${publDayArr[publDay]}) ${publHours}:${publMinutes}:${publSeconds}`;
 
@@ -80,58 +78,31 @@ window.onload = function() {
     $paymentInn.innerText = payTxt;
 
 
-    function getindex(c) {
-        let d = 0;
-        for(d; c= c.previousElementSibling; d++);
-        return d;
-    }
-
-    
-    // * 시작 버튼 이벤트*
+    // * 로또번호 랜덤 생성*
     $startBtn.addEventListener("click", () => {
-        tmp === 1 && (
-            tmp = 0,
-            lottery(),
-            setTimeout(function() {
-                tmp = 1;
-            }, 1000)
-        );
+        for(let i = 0; i < 5; i++) {
+            ball[i].innerHTML = generate();
+        }
     }, false);
 
-    function lottery() {
-        let random;
-        listIdx = 0;
+    function generate() {
+        let answer = [];
 
-        for(let i = 0; i < 5; i++) {
-            numbers = [1,2,3,4,5,6,7,8,9,10, 11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45];
-            for(let j = 0; j < 6; j++) {
-                random = Math.floor(Math.random() * numbers.length);
-                arr[i][j] = numbers[random];
-                numbers.splice(random, 1);
-            }
-        
-            let h, t, idx;
-            let $tmp;
-            for(h = 0; h < 5; h++) {
-                idx = h;
-                for(t = h+1; t < 6; t++) {
-                    if(arr[i][idx] > arr[i][t]) idx = t; 
+        for (let i = 0; i < 6; i++){
+            let check = false;
+            while (check == false){
+                let randNum = Math.floor(Math.random() * 45) + 1;
+                if (answer.includes(randNum) == false){
+                    answer.push(randNum);
+                    check = true;
                 }
-                $tmp = arr[i][h];
-                arr[i][h] = arr[i][idx];
-                arr[i][idx] = $tmp;
             }
-        } // for
-
-        Array.from($ball).forEach(x => {
-            decodeEffect(x, getindex(x));
-        });
-    } // lottery
-    
-    function decodeEffect(e, time) {
-        e.innerText = arr[listIdx][time-2];
-        if(time === 7) {
-            listIdx++;
         }
-    }
-} 
+        
+        answer.sort(function(a, b){
+            return a - b;
+        });
+        
+        return answer.join(', ');
+    } // generate
+}
