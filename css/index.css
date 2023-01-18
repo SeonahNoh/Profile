@@ -1015,6 +1015,7 @@ main .portfolio-wrap .pf .pf-img video.pf-video.scroll-fade-ts {
 main .portfolio-wrap .pf .pf-desc-link .pf-desc {
   padding-top: 1.5rem;
   font-size: 1.8rem;
+  word-break: break-all;
 }
 main .portfolio-wrap .pf .pf-desc-link .link {
   text-align: right;
