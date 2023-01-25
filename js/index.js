@@ -12,9 +12,11 @@ window.onload = function() {
     }
   }, false);
 
+  const logoMenuWarp= document.querySelector('.logo-menu-wrap');
 
   // *** 헤더 메뉴 클릭 시 본문으로 이동 *** 
-  const menuHg = logoMeunBgWarp.offsetHeight;
+  // const menuHg = logoMeunBgWarp.offsetHeight;
+  const menuHg = logoMenuWarp.offsetHeight;
 
   const $home = document.querySelector('.home');
   const $about = document.querySelector('.about');
@@ -44,7 +46,7 @@ window.onload = function() {
 
   $portfolio.addEventListener('click', e => {
     e.preventDefault();
-    window.scrollTo({top: portfolioWarp.offsetTop - menuHg + 100, behavior:'smooth'});
+    window.scrollTo({top: portfolioWarp.offsetTop - menuHg + 60, behavior:'smooth'});
   }, false);
 
   $contact.addEventListener('click', e => {
@@ -102,14 +104,14 @@ window.onload = function() {
 
   M_portfolio.addEventListener('click', e => {
     e.preventDefault();
-    window.scrollTo({top: portfolioWarp.offsetTop - menuHg + 100, behavior:'smooth'});
+    window.scrollTo({top: portfolioWarp.offsetTop - menuHg + 60, behavior:'smooth'});
     logoMeunBgWarp.classList.remove('active');
     mobileMenu.classList.remove('active');
   }, false);
 
   M_contact.addEventListener('click', e => {
     e.preventDefault();
-    window.scrollTo({top: contactWarp.offsetTop - 74, behavior:'smooth'});
+    window.scrollTo({top: contactWarp.offsetTop - 75, behavior:'smooth'});
     logoMeunBgWarp.classList.remove('active');
     mobileMenu.classList.remove('active');
   }, false);
