@@ -10,7 +10,7 @@
 
 ## 📝 <span id="a">개요</a>
 <br>
-<img src="https://user-images.githubusercontent.com/114633506/212024210-baf8a74c-afb4-4b65-a5a1-3e82be5859ce.png" width="800" height="auto">
+<img src="https://user-images.githubusercontent.com/114633506/214473905-5622e268-0f7a-4dfe-b6fb-83349f1d3e14.png" width="800" height="auto">
 <br>
 
 > **프로젝트** : 개인 포트폴리오 웹사이트 제작  
@@ -47,7 +47,7 @@
 ## 😎 <span id="c">기능</a>
 
 ### 1. 다양한 애니메이션 효과와 스크롤 이벤트  
-https://user-images.githubusercontent.com/114633506/212024993-08b8f083-d530-4486-8a4b-76c57701b39d.mp4
+https://user-images.githubusercontent.com/114633506/214473959-e47b40b8-9cc2-48a3-82c4-65aaf9648ec4.mp4
 
 <br>
 
