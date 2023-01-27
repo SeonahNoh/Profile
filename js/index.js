@@ -1,6 +1,8 @@
 window.onload = function() {
+
   // *** 헤더 메뉴 스크롤 ***
   const logoMeunBgWarp = document.querySelector('.logo-menu-bg-wrap');
+  
   window.addEventListener('scroll', () => {
     let scrollPos = window.scrollY;
     if(scrollPos > 80) {
@@ -14,45 +16,19 @@ window.onload = function() {
 
   const logoMenuWarp= document.querySelector('.logo-menu-wrap');
 
+
   // *** 헤더 메뉴 클릭 시 본문으로 이동 *** 
   // const menuHg = logoMeunBgWarp.offsetHeight;
   const menuHg = logoMenuWarp.offsetHeight;
+  const $menu = document.querySelectorAll('.menu');
+  const contentsWrap = document.querySelectorAll('.contents-wrap');
 
-  const $home = document.querySelector('.home');
-  const $about = document.querySelector('.about');
-  const $skills = document.querySelector('.skills');
-  const $portfolio = document.querySelector('.portfolio');
-  const $contact = document.querySelector('.contact');
-
-  const aboutWarp = document.querySelector('.about-wrap');
-  const skillsWarp = document.querySelector('.skills-wrap');
-  const portfolioWarp = document.querySelector('.portfolio-wrap');
-  const contactWarp = document.querySelector('.contact-wrap');
-
-  $home.addEventListener('click', e => {
-    e.preventDefault();
-    window.scrollTo({top: 0, behavior:'smooth'});
-  }, false);
-
-  $about.addEventListener('click', e => {
-    e.preventDefault();
-    window.scrollTo({top: aboutWarp.offsetTop - menuHg, behavior:'smooth'});
-  }, false);
-
-  $skills.addEventListener('click', e => {
-    e.preventDefault();
-    window.scrollTo({top: skillsWarp.offsetTop - menuHg, behavior:'smooth'});
-  }, false);
-
-  $portfolio.addEventListener('click', e => {
-    e.preventDefault();
-    window.scrollTo({top: portfolioWarp.offsetTop - menuHg + 60, behavior:'smooth'});
-  }, false);
-
-  $contact.addEventListener('click', e => {
-    e.preventDefault();
-    window.scrollTo({top: contactWarp.offsetTop, behavior:'smooth'});
-  }, false);
+  for(let i = 0; i < $menu.length; i++) {
+    $menu[i].addEventListener('click', e => {
+      e.preventDefault();
+      window.scrollTo({top: contentsWrap[i].offsetTop - menuHg, behavior:'smooth'});
+    }, false);
+  }
 
 
   // *** 모바일 메뉴 펼치기 ***
@@ -74,47 +50,16 @@ window.onload = function() {
 
 
   // *** 모바일 메뉴 클릭 시 본문으로 이동 ***
+  const M_menu = document.querySelectorAll('.m-menu');
 
-  const M_home = document.querySelector('.m-home');
-  const M_about = document.querySelector('.m-about');
-  const M_skills = document.querySelector('.m-skills');
-  const M_portfolio = document.querySelector('.m-portfolio');
-  const M_contact = document.querySelector('.m-contact');
-
-  M_home.addEventListener('click', e => {
-    e.preventDefault();
-    window.scrollTo({top: 0, behavior:'smooth'});
-    logoMeunBgWarp.classList.remove('active');
-    mobileMenu.classList.remove('active');
-  }, false);
-
-  M_about.addEventListener('click', e => {
-    e.preventDefault();
-    window.scrollTo({top: aboutWarp.offsetTop + 24, behavior:'smooth'});
-    logoMeunBgWarp.classList.remove('active');
-    mobileMenu.classList.remove('active');
-  }, false);
-
-  M_skills.addEventListener('click', e => {
-    e.preventDefault();
-    window.scrollTo({top: skillsWarp.offsetTop - menuHg, behavior:'smooth'});
-    logoMeunBgWarp.classList.remove('active');
-    mobileMenu.classList.remove('active');
-  }, false);
-
-  M_portfolio.addEventListener('click', e => {
-    e.preventDefault();
-    window.scrollTo({top: portfolioWarp.offsetTop - menuHg + 60, behavior:'smooth'});
-    logoMeunBgWarp.classList.remove('active');
-    mobileMenu.classList.remove('active');
-  }, false);
-
-  M_contact.addEventListener('click', e => {
-    e.preventDefault();
-    window.scrollTo({top: contactWarp.offsetTop - 75, behavior:'smooth'});
-    logoMeunBgWarp.classList.remove('active');
-    mobileMenu.classList.remove('active');
-  }, false);
+  for(let i = 0; i < M_menu.length; i++) {
+    M_menu[i].addEventListener('click', e => {
+      e.preventDefault();
+      window.scrollTo({top: contentsWrap[i].offsetTop - menuHg, behavior:'smooth'});
+      logoMeunBgWarp.classList.remove('active');
+      mobileMenu.classList.remove('active');
+    }, false);
+  };
 
 
   // *** 헤더 타이핑 ***
@@ -191,7 +136,10 @@ window.onload = function() {
     }
   }
 
+  
   // *** About section으로 이동 시 라인 그려지기 ***
+  const aboutWarp = document.querySelector('.about-wrap');
+
   window.addEventListener('scroll', () => {
     if(aboutWarp.offsetTop) {
       svgDraw('#svg-line path', '#f39c12', 23);
@@ -231,6 +179,8 @@ window.onload = function() {
 
 
   // *** Skills section으로 이동 시 circle progress bar 실행 ***
+  const skillsWarp = document.querySelector('.skills-wrap');
+  const portfolioWarp = document.querySelector('.portfolio-wrap');
   const $progress = document.getElementsByClassName('progress');
   let name = '';
 
@@ -278,42 +228,48 @@ window.onload = function() {
   }
   init();
   
-  $percent[0].addEventListener('mouseover', () => {
-    bgTxt.innerText = "HTML5"
-    h2.innerText = "HTML5";
-    p.innerText = "HTML5의 웹 표준을 준수하여 웹 페이지를 제작할 수 있습니다. header, main, footer, aside, article 등의 시맨틱 태그를 구분하여 사용할 줄 알고, 이를 통해 웹 접근성을 높일 수 있습니다. HTML5, CSS3(SASS), JavaScript를 이용하여 반응형 웹 제작이 가능합니다.";
-  }, false);
 
-  $percent[1].addEventListener('mouseover', () => {
-    bgTxt.innerText = "CSS3";
-    h2.innerText = "CSS3";
-    p.innerText = "CSS3로 W3C에서 규정한 표준화된 규격에 따른 웹사이트를 제작할 수 있습니다. 웹 페이지를 기획하고 포토샵을 활용하여 디자인 시안을 만들고, 이를 소스로 구현할 수 있습니다. 레퍼런스를 참고해 애니메이션이나 반응형 웹을 만들 수 있습니다.";
-  }, false);
+  let skillData = [
+    {
+      bg: "HTML5",
+      title: "HTML5",
+      des: "HTML5의 웹 표준을 준수하여 웹 페이지를 제작할 수 있습니다. header, main, footer, aside, article 등의 시맨틱 태그를 구분하여 사용할 줄 알고, 이를 통해 웹 접근성을 높일 수 있습니다. HTML5, CSS3(SASS), JavaScript를 이용하여 반응형 웹 제작이 가능합니다."
+    },
+    {
+      bg: "CSS3",
+      title:"CSS3",
+      des:"CSS3로 W3C에서 규정한 표준화된 규격에 따른 웹사이트를 제작할 수 있습니다. 웹 페이지를 기획하고 포토샵을 활용하여 디자인 시안을 만들고, 이를 소스로 구현할 수 있습니다. 레퍼런스를 참고해 애니메이션이나 반응형 웹을 만들 수 있습니다."
+    },
+    {
+      bg: "SASS",
+      title:"SASS",
+      des:"SASS에 대한 기본 개념을 이해하고 있습니다. SASS(SCSS)를 활용하여 조별 프로젝트를 수행하였습니다. 리액트에서 SASS를 활용할 수 있습니다. 나아가 유지 보수성이 좋은 웹 사이트를 구축하는 데 SASS를 어떻게 사용할 수 있을지에 대해 고민하고 SASS의 문법을 더욱 잘 활용하기 위해 공부하고 있습니다."
+    },
+    {
+      bg: "JAVASCRIPT",
+      title:"자바스크립트",
+      des:"Vanilla Javascript의 기본적인 활용이 가능합니다. 조건문의 종류를 알고 사용 방법을 이해합니다. for 반복문과 배열의 내장 함수을 활용할 줄 압니다. 원시값과 참조 복사를 이해하고 있으며 스프레드 연산자를 활용하여 데이터 불변성을 유지합니다. 로그인, 회원가입 및 유효성 검사 기능을 구현할 수 있습니다. 그 외에도 이벤트 리스너와 콜백 함수로 다양한 이벤트 구현이 가능합니다."
+    },
+    {
+      bg: "REACT",
+      title:"리액트",
+      des:"hook, 리덕스, 라우팅의 개념을 알고 이를 이용한 기본적인 리액트 페이지 개발이 가능합니다. React.js의 공식 라이브러리 및 플러그인을 사용할 수 있으며 React 부트스트랩을 활용할 수 있습니다. React를 좀더 깊게 이해하고 사용하고자 지금도 계속 공부하고 있습니다."
+    },
+    {
+      bg: "jQuery",
+      title:"제이쿼리",
+      des:"제이쿼리를 활용하여 기존 홈페이지의 페이지를 리뉴얼하는 첫 번째 개인 포트폴리오를 제작하였습니다. 이를 통해 제이쿼리 문법에 대해 알고 활용할 수 있게 되었습니다. 조별 프로젝트 시에는 자바스크립트와 더불어 제이쿼리 플러그인을 함께 활용하여 동적 인터페이스를 구현하였습니다."
+    }
+  ];
 
-  $percent[2].addEventListener('mouseover', () => {
-    bgTxt.innerText = "SASS";
-    h2.innerText = "SASS";
-    p.innerText = "SASS에 대한 기본 개념을 이해하고 있습니다. SASS(SCSS)를 활용하여 조별 프로젝트를 수행하였습니다. 리액트에서 SASS를 활용할 수 있습니다. 나아가 유지 보수성이 좋은 웹 사이트를 구축하는 데 SASS를 어떻게 사용할 수 있을지에 대해 고민하고 SASS의 문법을 더욱 잘 활용하기 위해 공부하고 있습니다.";
-  }, false);
+  for(let i = 0; i < $percent.length; i++) {
+    $percent[i].addEventListener('mouseover', () => {
+      bgTxt.innerText = skillData[i].bg;
+      h2.innerText = skillData[i].title;
+      p.innerText = skillData[i].des;
+    }, false);
+  }
 
-  $percent[3].addEventListener('mouseover', () => {
-    bgTxt.innerText = "JAVASCRIPT";
-    h2.innerText = "자바스크립트";
-    p.innerText = "Vanilla Javascript의 기본적인 활용이 가능합니다. 조건문의 종류를 알고 사용 방법을 이해합니다. for 반복문과 배열의 내장 함수을 활용할 줄 압니다. 원시값과 참조 복사를 이해하고 있으며 스프레드 연산자를 활용하여 데이터 불변성을 유지합니다. 로그인, 회원가입 및 유효성 검사 기능을 구현할 수 있습니다. 그 외에도 이벤트 리스너와 콜백 함수로 다양한 이벤트 구현이 가능합니다.";
-  }, false);
-
-  $percent[4].addEventListener('mouseover', () => {
-    bgTxt.innerText = "REACT";
-    h2.innerText = "리액트";
-    p.innerText = "hook, 리덕스, 라우팅의 개념을 알고 이를 이용한 기본적인 리액트 페이지 개발이 가능합니다. React.js의 공식 라이브러리 및 플러그인을 사용할 수 있으며 React 부트스트랩을 활용할 수 있습니다. React를 좀더 깊게 이해하고 사용하고자 지금도 계속 공부하고 있습니다.";
-  }, false);
-
-  $percent[5].addEventListener('mouseover', () => {
-    bgTxt.innerText = "jQuery";
-    h2.innerText = "제이쿼리";
-    p.innerText = "제이쿼리를 활용하여 기존 홈페이지의 페이지를 리뉴얼하는 첫 번째 개인 포트폴리오를 제작하였습니다. 이를 통해 제이쿼리 문법에 대해 알고 활용할 수 있게 되었습니다. 조별 프로젝트 시에는 자바스크립트와 더불어 제이쿼리 플러그인을 함께 활용하여 동적 인터페이스를 구현하였습니다.";
-  }, false);
-  
 
   // *** Pf section 스크롤 감지 동영상 재생 ***
   const pfVds = document.querySelectorAll('.pf-video');
