@@ -1,0 +1,278 @@
+@charset "UTF-8";
+
+.container {
+    position: relative;
+    width: 1400px;
+    margin: 0 auto;
+    /* background-color: red; */
+}
+
+/* 공통 소스 */
+section {
+    width: 100%;
+    height: 100vh;
+    padding: 30px 100px 0 80px;
+}
+
+h1 {
+    margin-top: 80px;
+    text-align: center;
+    font-size: 40px;
+}
+
+
+/* section1 header */
+
+.sec1-flex-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section1 h1 {
+    text-align: left;
+    margin-top: 0;
+}
+.section1 h1 > a > img {
+    width: 110px;
+}
+
+.link {
+    padding-top: 37px;
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.link > a > i {
+    font-size: 35px;
+}
+
+.link > a > i:hover {
+    color: #c6c6c6;
+}
+
+.section1 > .sec1-txt {
+    font-size: 80px;
+    padding: 0;
+    padding-right: 80px;
+}
+
+.section1 > .sec1-txt::selection {
+    color: blue;
+    background-color: transparent;
+}
+
+.section1 > .sec1-txt > span {
+    font-family: 'Noto Sans SC', sans-serif;
+}
+
+.section1 > .sec1-txt > span::selection {
+    color: blue;
+    background-color: transparent;
+}
+
+/* section2 */
+.brand-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+
+.brand-wrap > div {
+    width: 100%;
+    overflow: hidden;
+}
+
+.brand-wrap > div > a > img {
+    display: block;
+    width: 100%;
+    transition: all 500ms;
+}
+
+.brand-wrap > div > a > img:hover {
+    transform: scale(1.05);
+}
+
+.section2 strong {
+    padding: 5px;
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.more-brand {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.more-brand > span {
+    padding: 10px 15px;
+    font-size: 18px;
+    font-weight: 600;
+    border: 1px solid black;
+    transition: all 0.3s;
+}
+
+.more-brand > span:hover {
+    border-radius: 50px;
+}
+
+/* section3 */
+.review-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+
+.review {
+    position: relative;
+    width: 330px;
+    height: 150px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 3px 5px 0px #c6c6c6;
+    border: 1px solid #f8f8f8;
+    background-color: #f8f8f8;
+}
+
+.review > a > p {
+    font-size: 14px;
+}
+
+.fa-heart {
+    position: absolute;
+    right: 20px; top: 24px;
+    color: red;
+}
+
+.tag-box {
+    position: absolute;
+    bottom: 20px; left: 20px;
+    display: flex;
+}
+
+.tag-box > div {
+    font-size: 12px;
+    padding: 2px 5px;
+    color: black;
+    font-weight: 600;
+    margin: 3px;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+.review-3 > a > h3 {
+    font-size: 14px;
+}
+
+.review-4 > a > h3 {
+    font-size: 18px;
+}
+
+.section3-des {
+    margin-top: 100px;
+}
+
+.section3 strong {
+    padding: 5px;
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+}
+
+/* section4 */
+.section4 {
+    height: auto;
+    height: 2000px;
+}
+
+.section4 > strong {
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+}
+
+/* section3 공통 소스 */
+.contents {
+    display: flex;
+}
+
+.contents img {
+    display: block;
+    width: 550px;
+}
+
+.txt-wrap {
+    padding: 80px 0 0 300px;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.txt-wrap > .title {
+    padding-bottom: 20px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.txt-wrap > .view-more {
+    margin-top: 30px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.view-more > span {
+    padding: 10px 15px;
+    border: 1px solid black;
+    transition: all 0.3s;
+}
+
+.view-more > span:hover {
+    border-radius: 50px;
+}
+
+/* 공통 소스 끝 */
+
+.contents-wrap {
+    margin-top: 80px;
+}
+
+.item-2 {
+    justify-content: right;
+}
+
+.item-2 > .txt-wrap {
+    padding: 80px 300px 0 0;
+}
+
+/* section5 */
+.store-info-wrap {
+    margin-top: 80px;
+    display: flex;
+}
+
+.store-info-wrap > div > img {
+    display: block;
+    width: 700px;
+}
+.store-info-wrap > ul > li {
+    padding: 10px 0;
+    margin-left: 40px;
+}
+
+.store-info-wrap > ul > li > div:first-child {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* section6 footer */
+.section6 {
+    height: 50px;
+    line-height: 50px;
+    border-top: 1px solid #c6c6c6;
+}
+
+.section6 > div {
+    font-size: 14px;
+    text-align: center;
+}

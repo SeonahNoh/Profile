@@ -165,6 +165,38 @@ window.onload = function() {
     });
 
 
+  // *** Skills Swiper ***
+    let swiper = new Swiper('.mySwiper', {
+      slidesPerView: 2.4,
+      spaceBetween: 10,
+      freeMode: true,
+      autoplay: {     
+        delay: 2000,
+        disableOnInteraction: false, 
+      },
+      breakpoints: { 
+        768: {
+          slidesPerView: 3.4, 
+          autoplay: {     
+            delay: 3000, 
+          },
+        },
+        1024: {
+          slidesPerView: 4.4,
+          autoplay: {     
+            delay: 3000, 
+          },
+        },
+        1440: {
+          slidesPerView: 5.4,
+          autoplay: {     
+            delay: 3000, 
+          },
+        },
+      }
+    });
+
+
   // *** Skills section 동그라미 커서 효과 ***
   const circle = document.querySelector('.circle');
   const percent = document.querySelector('.circle');
@@ -181,7 +213,7 @@ window.onload = function() {
   // *** Skills section으로 이동 시 circle progress bar 실행 ***
   const skillsWarp = document.querySelector('.skills-wrap');
   const portfolioWarp = document.querySelector('.portfolio-wrap');
-  const $progress = document.getElementsByClassName('progress');
+  const $progress = document.querySelectorAll('.progress');
   let name = '';
 
   window.addEventListener('scroll', () => {
@@ -259,6 +291,31 @@ window.onload = function() {
       bg: "jQuery",
       title:"제이쿼리",
       des:"제이쿼리를 활용하여 기존 홈페이지의 페이지를 리뉴얼하는 첫 번째 개인 포트폴리오를 제작하였습니다. 이를 통해 제이쿼리 문법에 대해 알고 활용할 수 있게 되었습니다. 조별 프로젝트 시에는 자바스크립트와 더불어 제이쿼리 플러그인을 함께 활용하여 동적 인터페이스를 구현하였습니다."
+    },
+    {
+      bg: "Bootstrap",
+      title:"부트스트랩",
+      des:"bootstrap에서 제공하고 있는 스타일 컴포넌트를 활용한 웹 제작이 가능합니다. 오픈 소스를 수정하여 더 나은 포맷을 만들 수 있습니다. 마찬가지로 React-bootstrap를 활용할 수 있습니다. "
+    },
+    {
+      bg: "Photoshop",
+      title:"포토샵",
+      des:"포토샵을 이용하여 웹 페이지 시안 제작이 가능합니다. 포토샵 툴을 이용하여 사진을 편집할 수 있습니다. 그 밖에 색 보정, 명도 보정, 클리핑 마스크, 그라디언트 등의 기능을 활용할 수 있습니다."
+    },
+    {
+      bg: "Illustrator",
+      title:"일러스트레이터",
+      des:"웹 페이지 제작에 필요한 로고 및 아이콘을 만들 수 있습니다. 기본적인 툴을 이해하고 사용할 수 있으며, 펜툴을 이용해 간단한 캐릭터 및 도형을 그릴 수 있습니다."
+    },
+    {
+      bg: "Node.js",
+      title:"노드 js",
+      des:"Node.js를 이용하여 몽고DB에 GET, POST, DELETE, PUT 요청하는 방법을 익혔습니다. 이를 통해 ejs의 기본적인 사용법을 알게 되었습니다. Node.js가 Server Side JavaScript 플랫폼으로 각광받고 있는 만큼 Node.js를 활용한 DB 연동, 네트워크 통신과 웹 서버를 구현하는 방법 등을 앞으로도 꾸준히 학습할 것입니다."
+    },
+    {
+      bg: "Git",
+      title:"깃",
+      des:"config, init, add, commit, pull, push 등 기본적인 깃 명령어를 이해하고 있으며 이를 Visual Studio Code에 연동할 수 있습니다. 팀 프로젝트 당시에는 Github를 이용하여 팀원들의 파일 및 작업을 조율하고 리드미를 작성했습니다."
     }
   ];
 

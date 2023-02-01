@@ -87,34 +87,34 @@ img {
     opacity: 1;
   }
 }
-@keyframes circle-html5 {
+@keyframes circle-95 {
   to {
     stroke-dashoffset: 23.55;
   }
 }
-@keyframes circle-css3 {
-  to {
-    stroke-dashoffset: 23.55;
-  }
-}
-@keyframes circle-js {
-  to {
-    stroke-dashoffset: 70.65;
-  }
-}
-@keyframes circle-sass {
+@keyframes circle-90 {
   to {
     stroke-dashoffset: 47.1;
   }
 }
-@keyframes circle-react {
+@keyframes circle-85 {
   to {
-    stroke-dashoffset: 117.75;
+    stroke-dashoffset: 70.65;
   }
 }
-@keyframes circle-jQuery {
+@keyframes circle-80 {
   to {
-    stroke-dashoffset: 117.75;
+    stroke-dashoffset: 80.33;
+  }
+}
+@keyframes circle-75 {
+  to {
+    stroke-dashoffset: 100;
+  }
+}
+@keyframes circle-55 {
+  to {
+    stroke-dashoffset: 200.58;
   }
 }
 @keyframes downUp {
@@ -687,6 +687,7 @@ main .about-wrap .flex-box .strength-content .sth-123 > div p.eng {
 }
 main .skills-wrap {
   margin-top: 8rem;
+  height: 100%;
   background-color: #f39c12;
 }
 @media screen and (min-width: 768px) {
@@ -706,7 +707,6 @@ main .skills-wrap {
 }
 main .skills-wrap .skills-wrap-bg {
   position: relative;
-  padding-bottom: 12rem;
   background-color: #f39c12;
 }
 main .skills-wrap .skills-wrap-bg .bg-txt {
@@ -727,10 +727,11 @@ main .skills-wrap .skills-wrap-bg .desc-circle {
   top: 14vw;
   width: 100%;
   height: 100%;
+  padding-bottom: 2rem;
 }
 @media screen and (min-width: 1440px) {
   main .skills-wrap .skills-wrap-bg .desc-circle {
-    top: 30px;
+    top: 0px;
   }
 }
 main .skills-wrap .skills-wrap-bg .desc-circle .desc {
@@ -757,6 +758,33 @@ main .skills-wrap .skills-wrap-bg .desc-circle .desc p {
   padding-top: 2.5rem;
   word-break: break-all;
 }
+main .skills-wrap .skills-wrap-bg .desc-circle .line-txt {
+  display: none;
+  z-index: 1;
+}
+@media screen and (min-width: 1440px) {
+  main .skills-wrap .skills-wrap-bg .desc-circle .line-txt {
+    display: block;
+    position: absolute;
+    left: -4px;
+    top: 160px;
+    font-size: 5rem;
+    padding: 0 0.5rem;
+    color: #fff;
+    background-color: #f39c12;
+    transform: rotate(-90deg);
+  }
+}
+@media screen and (min-width: 1440px) {
+  main .skills-wrap .skills-wrap-bg .desc-circle .line {
+    position: absolute;
+    left: 83px;
+    top: 0;
+    width: 1.5px;
+    height: 100%;
+    background-color: #fff;
+  }
+}
 main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap {
   width: 100%;
   display: flex;
@@ -764,28 +792,40 @@ main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap {
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-top: 7.8rem;
+  padding-bottom: 5rem;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap {
     justify-content: space-around;
     flex-wrap: nowrap;
   }
 }
-main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill {
-  width: 49.9999999999%;
-}
-@media screen and (min-width: 768px) {
-  main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill {
-    width: 30.9999999999%;
-  }
-}
 @media screen and (min-width: 1024px) {
-  main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill {
-    width: 20.999999999%;
+  main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap {
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    padding-top: 7.8rem;
   }
 }
-main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill .img-box {
+@media screen and (min-width: 1440px) {
+  main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap {
+    padding-bottom: 0;
+  }
+}
+main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper {
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+}
+main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide {
+  height: 100%;
+}
+main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill {
+  width: 100%;
+}
+main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box {
   position: relative;
   display: flex;
   align-items: center;
@@ -794,26 +834,26 @@ main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill .img-b
   z-index: 2;
 }
 @media screen and (min-width: 1024px) {
-  main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill .img-box.a, main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill .img-box.c, main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill .img-box.e {
+  main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box.a, main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box.c, main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box.e, main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box.g, main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box.i, main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box.k {
     animation: downUp 1s infinite alternate;
   }
-  main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill .img-box.b, main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill .img-box.d, main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill .img-box.f {
+  main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box.b, main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box.d, main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box.f, main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box.h, main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box.j {
     animation: upDown 1s infinite alternate;
   }
 }
-main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill .img-box .skill-img {
+main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box .skill-img {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
 }
-main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill .img-box .skill-img .circle {
+main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box .skill-img .circle {
   margin: 0 auto;
   width: 100%;
   border-radius: 50%;
 }
-main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill .img-box .skill-img .percent {
+main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box .skill-img .percent {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -832,25 +872,25 @@ main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill .img-b
   background-color: rgba(255, 255, 255, 0.8);
 }
 @media screen and (min-width: 768px) {
-  main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill .img-box .skill-img .percent {
+  main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box .skill-img .percent {
     font-size: 2.6rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill .img-box .skill-img .percent {
+  main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box .skill-img .percent {
     font-size: 2.6rem;
   }
 }
-main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill .img-box .skill-img .percent.show {
+main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box .skill-img .percent.show {
   opacity: 1;
 }
-main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill .img-box:hover .percent {
+main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box:hover .percent {
   opacity: 1;
 }
-main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill .img-box svg {
+main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box svg {
   transform: rotate(-90deg);
 }
-main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill .img-box svg circle {
+main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box svg circle {
   fill: none;
   stroke: rgba(255, 255, 255, 0.8);
   stroke-miterlimit: 10;
@@ -862,49 +902,23 @@ main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill .img-b
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
-main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill .img-box svg circle.html5 {
-  animation-name: circle-html5;
+main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box svg circle.html5, main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box svg circle.css3 {
+  animation-name: circle-95;
 }
-main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill .img-box svg circle.css3 {
-  animation-name: circle-css3;
+main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box svg circle.sass, main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box svg circle.jQuery {
+  animation-name: circle-90;
 }
-main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill .img-box svg circle.sass {
-  animation-name: circle-sass;
+main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box svg circle.js, main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box svg circle.bootstrap, main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box svg circle.ps {
+  animation-name: circle-85;
 }
-main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill .img-box svg circle.js {
-  animation-name: circle-js;
+main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box svg circle.git {
+  animation-name: circle-80;
 }
-main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill .img-box svg circle.react {
-  animation-name: circle-react;
+main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box svg circle.react, main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box svg circle.ai {
+  animation-name: circle-75;
 }
-main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .skill .img-box svg circle.jQuery {
-  animation-name: circle-jQuery;
-}
-main .skills-wrap .skills-wrap-bg .line-txt {
-  display: none;
-}
-@media screen and (min-width: 1440px) {
-  main .skills-wrap .skills-wrap-bg .line-txt {
-    display: block;
-    position: absolute;
-    left: -4px;
-    top: 160px;
-    font-size: 5rem;
-    padding: 0 0.5rem;
-    color: #fff;
-    background-color: #f39c12;
-    transform: rotate(-90deg);
-  }
-}
-@media screen and (min-width: 1440px) {
-  main .skills-wrap .skills-wrap-bg .line {
-    position: absolute;
-    left: 83px;
-    top: 0;
-    width: 1.5px;
-    height: 100%;
-    background-color: #fff;
-  }
+main .skills-wrap .skills-wrap-bg .desc-circle .skills-circle-wrap .swiper .swiper-slide .skill .img-box svg circle.node {
+  animation-name: circle-55;
 }
 main .portfolio-wrap {
   margin-top: 4rem;
