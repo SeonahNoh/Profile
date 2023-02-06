@@ -22,6 +22,9 @@ h1 {
 
 
 /* section1 header */
+.section1 {
+    overflow-y: scroll;
+}
 
 .sec1-flex-box {
     display: flex;
@@ -52,7 +55,8 @@ h1 {
 }
 
 .section1 > .sec1-txt {
-    font-size: 80px;
+    font-size: calc(50px + 80%);
+    word-break: break-all;
     padding: 0;
     padding-right: 80px;
 }

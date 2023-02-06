@@ -5,7 +5,6 @@
     width: 1200px;
     margin: 0 auto;
     padding: 0 10px;
-    /* background-color: pink; */
 }
 
 
@@ -23,7 +22,7 @@ header {
     height: 999px;
     background: url(../images/main_img.png) 0 0 no-repeat;
     background-size: cover;
-    z-index: 9999;
+    z-index: 10;
     opacity: 0;
     animation: fadeImg 1s linear forwards;
 }
@@ -34,6 +33,7 @@ header {
     position: fixed;
     top: 0; left: 0; right: 0;
     overflow: hidden;
+    z-index: 100;
 }
 
 .mainmenu-box { 
@@ -53,6 +53,7 @@ header {
 
 .main-logo img {
     height: 80px;
+    margin-left: -9px;
 }
 
 /* ======== main-menu ======== */
@@ -203,8 +204,7 @@ input::-webkit-search-cancel-button {
 }
 
 .main-img-box {
-    position: absolute;
-    top: 500px; 
+    padding-top: 500px;
     color: white;
 }
 
@@ -281,7 +281,8 @@ input::-webkit-search-cancel-button {
 /* ======== tower-guide-section ======== */
 
 .tower-guide-section {
-    margin-top: 400px;
+    position: relative;
+    margin-top: 300px;
 }
 
 .tower-guide-section > h2 {
@@ -334,16 +335,19 @@ input::-webkit-search-cancel-button {
     transform: rotate(0);
 }
 
-.guide-section-main-img {
+.guide-section-main-img img {
     position: absolute;
-    right: 0; top: 1500px;
+    right: 0; top: 0;
+    width: 65%;
+    min-width: 950px;
+    max-width: 1000px;
 }
 
 
 /* ======= tower-intro-section ======= */
 
 .tower-intro-section {
-    margin-top: 300px;    
+    margin-top: 350px;    
 } 
 
 .tower-intro-section > h2 {
@@ -575,7 +579,7 @@ footer {
 
 .logo-address-security {
     display: flex;
-    width: 56%;
+    width: 70%;
     margin-top: 66px;
     padding: 0 20px;
     font: 13px "맑은 고딕";
@@ -593,7 +597,8 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 70.1176470588%;
+    width: 90%;
+    max-width: 600px;
     padding-bottom: 27px;
 }
 
